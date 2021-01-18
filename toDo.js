@@ -63,3 +63,21 @@ function removeDup(arr) {
 
 }
 console.log(removeDup([1, 2, 3, 3, 3, 4, 5, 5, 6, 7, 8, 8]))
+
+function minToFront(arr) {
+    let min = arr[0];
+    let idx = 0;
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i] < min){
+            min = arr[i]
+            idx = i
+        }
+    }
+    for(let j = idx; j > 0; j--){
+        let temp = arr[j]
+        arr[j] = arr[j-1]
+        arr[j-1] = temp
+    }
+    return arr;
+}
+console.log(minToFront([4, 2, 1, 3, 5],))
